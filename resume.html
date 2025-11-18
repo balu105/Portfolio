@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kandanathi Chittem Balaji — Resume</title>
+
+<style>
+  :root {
+    --accent: #0a66c2;
+    --text: #0b1220;
+    --muted: #58606b;
+    --border: #e6eef6;
+  }
+
+  html, body {
+    margin: 0;
+    background: #f4f4f4;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .page {
+    max-width: 740px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 4px;
+  }
+
+  /* Header */
+  header { text-align: center; margin-bottom: 25px; }
+  .name { font-size: 24px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; color: #000; }
+  .links { font-size: 12px; color: var(--muted); }
+  .links a { color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 4px; }
+  .links a:hover { text-decoration: underline; }
+
+  /* Sections */
+  section { margin-bottom: 20px; }
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 0 0 12px 0;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    font-weight: 800;
+    color: #000;
+  }
+
+  /* Text formatting */
+  p, li { margin: 2px 0; }
+  ul { margin: 4px 0 10px 18px; padding: 0; }
+  li { margin-bottom: 4px; color: #333; }
+  
+  /* Entry Components */
+  .entry { margin-bottom: 12px; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .title { font-weight: 700; font-size: 13px; color: #000; }
+  .date { font-size: 11px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+  .meta { color: var(--muted); font-size: 11.5px; font-style: italic; margin-bottom: 4px; display: block; }
+  
+  /* Skills Grid */
+  .skills-grid { display: grid; grid-template-columns: 110px auto; gap: 6px 10px; }
+  .skill-label { font-weight: 700; font-size: 11.5px; color: #444; }
+
+  /* --- NEW PROFESSIONAL CERTIFICATION STYLES --- */
+  .cert-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #f0f0f0; /* Very subtle separator */
+  }
+  .cert-row:last-child { border-bottom: none; }
+  
+  .cert-info { font-size: 12px; }
+  .cert-name { font-weight: 700; color: #0b1f38; }
+  .cert-issuer { color: #58606b; font-style: italic; margin-left: 4px; }
+  
+  .cert-link {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    background: #f0f7ff; /* Very light blue background */
+    padding: 2px 8px;
+    border-radius: 12px; /* Pill shape */
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .cert-link:hover {
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Print adjustments */
+  @media print {
+    body { background: none; }
+    .page { box-shadow: none; margin: 0; padding: 20px; width: 100%; }
+    .cert-link { border: 1px solid #ccc; background: none; color: #000; }
+  }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header>
+    <div class="name">Kandanathi Chittem Balaji</div>
+    <div class="links">
+      <a href="mailto:balajikc89@gmail.com">balajikc89@gmail.com</a> •
+      +91 9182144783 •
+      <a href="https://linkedin.com/in/kandanathi-chittem-balaji" target="_blank">LinkedIn</a> •
+      <a href="https://github.com/balajikc89" target="_blank">GitHub</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <p style="line-height:1.5; color:#333;">
+      Computer Science & AI undergraduate with practical experience in machine learning, AWS cloud workflows, and data analysis. Skilled in Python, Pandas, and scikit-learn with a strong foundation in building automated pipelines and secure cloud storage solutions.
+    </p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="title">St. Johns College of Engineering and Technology</span>
+        <span class="date">2022 – 2026</span>
+      </div>
+      <span class="meta">B.Tech — Computer Science & Artificial Intelligence · CGPA: 7.5</span>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="title">Govt Junior College, Yemmiganur</span>
+        <span class="date">2020 – 2022</span>
+      </div>
+      <span class="meta">Intermediate (MPC) · 88.1%</span>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="title">Govt High School, Yemmiganur</span>
+        <span class="date">2019 – 2020</span>
+      </div>
+      <span class="meta">SSC · CGPA: 10/10</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <span class="skill-label">Languages</span>
+      <span>Python, C, Java, SQL</span>
+      <span class="skill-label">Data & AI</span>
+      <span>Pandas, scikit-learn, NLP, Transformers, Data Analysis</span>
+      <span class="skill-label">Cloud & Web</span>
+      <span>AWS (S3, EC2, EFS), Flask, HTML, CSS, JavaScript</span>
+      <span class="skill-label">Tools</span>
+      <span>Git, GitHub, MySQL, Power BI, VS Code</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Internship Experience</h2>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="title">SmartBridge Virtual Internship — Machine Learning</span>
+        <span class="date">2024</span>
+      </div>
+      <ul>
+        <li>Built ML classification and regression models utilizing <strong>scikit-learn</strong>.</li>
+        <li>Performed Exploratory Data Analysis (EDA), data preprocessing, and feature engineering.</li>
+        <li>Developed automated ML pipelines to streamline the training and testing process.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="title">AWS Cloud Virtual Internship — APSSDC</span>
+        <span class="date">2024</span>
+      </div>
+      <ul>
+        <li>Designed secure file workflows implementing <strong>AWS S3</strong> buckets and pre-signed URLs.</li>
+        <li>Configured <strong>EC2</strong> instances, EFS storage, and CloudWatch for application deployment.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Projects</h2>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="title">Grammar Corrector Application</span>
+        <span class="meta">Python, NLP, Transformers</span>
+      </div>
+      <ul>
+        <li>Developed a real-time grammar correction tool utilizing transformer-based NLP models to detect and fix syntax errors.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="title">File Storage & Sharing System</span>
+        <span class="meta">Flask, AWS S3, EC2</span>
+      </div>
+      <ul>
+        <li>Built a secure cloud-based web application allowing users to upload and download files via generated pre-signed URLs.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="title">Employee Performance Prediction</span>
+        <span class="meta">Python, Pandas, scikit-learn</span>
+      </div>
+      <ul>
+        <li>Engineered a predictive model to assess employee performance levels using various classification algorithms.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    
+    <div class="cert-row">
+      <div class="cert-info">
+        <span class="cert-name">Python Programming</span> <span class="cert-issuer">– Guvi | HCL</span>
+      </div>
+      <a href="https://github.com/balu105/Portfolio/blob/main/Guvi-python.jpg" target="_blank" class="cert-link">View Certificate ↗</a>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-info">
+        <span class="cert-name">Python Programming</span> <span class="cert-issuer">– Skill India Digital Hub</span>
+      </div>
+      <a href="https://github.com/balu105/Portfolio/blob/main/SIDH-python.jpg" target="_blank" class="cert-link">View Certificate ↗</a>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-info">
+        <span class="cert-name">Java Programming</span> <span class="cert-issuer">– Infosys Springboard</span>
+      </div>
+      <a href="https://github.com/balu105/Portfolio/blob/main/java-Infosys.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-info">
+        <span class="cert-name">SQL</span> <span class="cert-issuer">– Sololearn</span>
+      </div>
+      <a href="https://github.com/balu105/Portfolio/blob/main/sololearn-SQL.jpg" target="_blank" class="cert-link">View Certificate ↗</a>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-info">
+        <span class="cert-name">JDBC</span> <span class="cert-issuer">– Simplilearn</span>
+      </div>
+      <a href="https://github.com/balu105/Portfolio/blob/main/simplilearn-JDBC.jpg" target="_blank" class="cert-link">View Certificate ↗</a>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-info">
+        <span class="cert-name">Data Analytics</span> <span class="cert-issuer">– Cisco Foundation</span>
+      </div>
+      <a href="https://github.com/balu105/Portfolio/blob/main/cisco-data%20analysis.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>
