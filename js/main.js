@@ -358,9 +358,10 @@ document.addEventListener('DOMContentLoaded', () => {
     animateParticles();
   }
 
-  // 12. Real Email & Contact Form Submission Handling (FormSubmit Integration)
+  // 12. Real Email & Contact Form Submission Handling (FormSubmit Integration + Email App Fallback)
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
+  const mailtoFallbackBtn = document.getElementById('mailtoFallbackBtn');
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -389,14 +390,15 @@ document.addEventListener('DOMContentLoaded', () => {
           message: messageVal
         })
       })
-      .then(response => {
+      .then(response => response.json())
+      .then(data => {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         }
         if (formStatus) {
           formStatus.className = 'form-status success';
-          formStatus.textContent = 'Thank you! Your message has been delivered to balajikc89@gmail.com. I will get back to you shortly!';
+          formStatus.textContent = 'Message sent! (Important: Check balajikc89@gmail.com inbox once for FormSubmit activation link if testing for the first time).';
           formStatus.style.display = 'block';
         }
         contactForm.reset();
@@ -404,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           if (submitBtn) submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
           if (formStatus) formStatus.style.display = 'none';
-        }, 5000);
+        }, 7000);
       })
       .catch(error => {
         if (submitBtn) {
@@ -413,11 +415,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (formStatus) {
           formStatus.className = 'form-status success';
-          formStatus.textContent = 'Opening your mail client...';
+          formStatus.textContent = 'Opening your email application...';
           formStatus.style.display = 'block';
         }
         window.location.href = `mailto:balajikc89@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent("From: " + nameVal + " (" + emailVal + ")\n\n" + messageVal)}`;
       });
+    });
+  }
+
+  if (mailtoFallbackBtn) {
+    mailtoFallbackBtn.addEventListener('click', () => {
+      const nameVal = document.getElementById('name') ? document.getElementById('name').value : '';
+      const emailVal = document.getElementById('email') ? document.getElementById('email').value : '';
+      const subjectVal = document.getElementById('subject') ? document.getElementById('subject').value : 'Portfolio Inquiry';
+      const messageVal = document.getElementById('message') ? document.getElementById('message').value : '';
+
+      window.location.href = `mailto:balajikc89@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent("From: " + nameVal + " (" + emailVal + ")\n\n" + messageVal)}`;
     });
   }
 });

@@ -550,7 +550,10 @@
         </div>
       </div>
 
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/balajikc89@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
         <div class="form-group">
           <label for="name">Your Name</label>
           <input type="text" id="name" name="name" placeholder="John Doe" required>
@@ -568,9 +571,14 @@
           <textarea id="message" name="message" rows="4" placeholder="Hello Balaji, I'd like to discuss..." required></textarea>
         </div>
         <div class="form-status" id="formStatus"></div>
-        <button type="submit" class="btn-primary" style="align-self: flex-start;">
-          <i class="fas fa-paper-plane"></i> Send Message
-        </button>
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <button type="button" id="mailtoFallbackBtn" class="btn-outline" style="padding: 0.85rem 1.4rem;">
+            <i class="fas fa-envelope"></i> Send via Email App
+          </button>
+        </div>
       </form>
     </div>
   </section>
