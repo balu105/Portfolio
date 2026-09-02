@@ -12,7 +12,6 @@ Welcome to the official repository for my developer portfolio website. This site
 ```
 d:\Portfolio/
 ├── index.html                  # Main interactive single-page portfolio application
-├── resume.html                 # Printable A4 Resume / PDF export view
 ├── README.md                   # Project documentation and setup guide
 ├── css/
 │   └── style.css               # Modular design system & CSS stylesheet
@@ -29,7 +28,8 @@ d:\Portfolio/
     │       ├── networking.jpg
     │       ├── simplilearn-JDBC.jpg
     │       └── sololearn-SQL.jpg
-    └── pdfs/                   # PDF credentials
+    └── pdfs/                   # PDF credentials & Resume
+        ├── Balaji_Resume.pdf
         ├── cisco-data-analysis.pdf
         └── java-Infosys.pdf
 ```
@@ -44,7 +44,7 @@ d:\Portfolio/
 - **Animated Skill Metrics**: Radial SVG circle progress indicators triggered on scroll.
 - **Stats Counter**: Smooth animated number counters for key statistics.
 - **Typewriter Effect**: Subtitle animation cycling through core professional specializations.
-- **Printable Resume View**: Dedicated printable single-page resume ([resume.html](resume.html)).
+- **Direct PDF Resume**: Quick access to official resume PDF ([assets/pdfs/Balaji_Resume.pdf](assets/pdfs/Balaji_Resume.pdf)).
 - **Deployment Ready**: Standard file hierarchy configured for GitHub Pages, Netlify, and Vercel.
 
 ---
