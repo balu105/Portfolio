@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateParticles();
   }
 
-  // 12. Contact Form Submission Handling
+  // 12. Real Email & Contact Form Submission Handling (FormSubmit Integration)
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
 
@@ -368,17 +368,35 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending Message...';
       }
 
-      setTimeout(() => {
+      const nameVal = document.getElementById('name') ? document.getElementById('name').value : '';
+      const emailVal = document.getElementById('email') ? document.getElementById('email').value : '';
+      const subjectVal = document.getElementById('subject') ? document.getElementById('subject').value : '';
+      const messageVal = document.getElementById('message') ? document.getElementById('message').value : '';
+
+      fetch('https://formsubmit.co/ajax/balajikc89@gmail.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: nameVal,
+          email: emailVal,
+          _subject: `[Portfolio Contact] ${subjectVal}`,
+          message: messageVal
+        })
+      })
+      .then(response => {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         }
         if (formStatus) {
           formStatus.className = 'form-status success';
-          formStatus.textContent = 'Thank you! Your message has been received. I will get back to you shortly.';
+          formStatus.textContent = 'Thank you! Your message has been delivered to balajikc89@gmail.com. I will get back to you shortly!';
           formStatus.style.display = 'block';
         }
         contactForm.reset();
@@ -386,8 +404,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           if (submitBtn) submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
           if (formStatus) formStatus.style.display = 'none';
-        }, 4500);
-      }, 1200);
+        }, 5000);
+      })
+      .catch(error => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        }
+        if (formStatus) {
+          formStatus.className = 'form-status success';
+          formStatus.textContent = 'Opening your mail client...';
+          formStatus.style.display = 'block';
+        }
+        window.location.href = `mailto:balajikc89@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent("From: " + nameVal + " (" + emailVal + ")\n\n" + messageVal)}`;
+      });
     });
   }
 });
